@@ -131,37 +131,6 @@ export default {
       justify-content: space-evenly;
       color: $text-color;
 
-      &__register{
-        width: 100%;
-        h2{
-          margin-bottom: 20px;
-        }
-
-        &__form{
-          input{
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 10px;
-            width: 100%;
-            padding: 5px;border: none;
-          }
-  
-          &__address{
-            width: 100%;
-  
-            &__3-inputs{
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-  
-              input{
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
-
       &__login{
         width: 100%;
         &__form{
@@ -194,7 +163,37 @@ export default {
         h2{
           margin-bottom: 20px;
         }
+      }
 
+      &__register{
+        width: 100%;
+        h2{
+          margin-bottom: 20px;
+        }
+
+        &__form{
+          input{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 5px;border: none;
+          }
+  
+          &__address{
+            width: 100%;
+  
+            &__3-inputs{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+  
+              input{
+                width: 100%;
+              }
+            }
+          }
+        }
       }
 
       &__button{
@@ -215,5 +214,33 @@ export default {
         }
       }
     }
+  }
+  
+  
+  @media(max-width: 680px){
+   .login{
+    padding: 20px;
+
+    &__forms{
+      flex-direction: column;
+
+      &__login{
+        &__form{
+          width: 100%;
+        }
+      }
+
+      &__register{
+        margin-top: 60px;
+        &__form{
+          &__address{
+            &__3-inputs{
+              gap: 5px;
+            }
+          }
+        }
+      }
+    }
+   }       
   }
 </style>
