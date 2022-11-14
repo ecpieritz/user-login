@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <main class="list">
     <h1>Lista de usuários</h1>
-  </div>
+  </main>
 </template>
