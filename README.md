@@ -38,7 +38,7 @@ git clone https://github.com/ecpieritz/user-login.git
 - open http://localhost:8080/ 
 
 #### Test User
-Login: `teste@teste.com`
-Password: `Teste987@`
+- Login: `teste@teste.com`
+- Password: `Teste987@`
 ---
 <p align = "right">Developed with :blue_heart: by Emilyn C. Pieritz</p>
