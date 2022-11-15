@@ -2,16 +2,16 @@
   <main class="login">
     <section class="login__forms">
       <div class="login__forms__login">
-        <form>
+        <form class="login__forms__login__form" @submit.prevent="login">
           <h2>Login</h2>
-          <div class="login__forms__login__form">
-            <div class="login__forms__login__form__1-input">
+          <div class="login__forms__login__form__form">
+            <div class="login__forms__login__form__form__1-input">
               <label class="login__forms__label" for="login-email">Email</label>
               <input type="login-email" id="login-email" name="login-email" autocomplete="login-email" required
               enterkeyhint="next" v-model="loginForm.email" />
             </div>
             
-            <div class="login__forms__login__form__1-input">
+            <div class="login__forms__login__form__form__1-input">
               <label class="login__forms__label" for="login-password">Senha</label>
               <input type="password" id="login-password" name="login-password" autocomplete="login-password" required
                 enterkeyhint="next" v-model="loginForm.password" />
@@ -24,7 +24,7 @@
       </div>
 
       <div class="login__forms__register">
-        <form class="login__forms__register__form">
+        <form class="login__forms__register__form" @submit.prevent="register">
           <h2>Não tem registro? Crie um agora!</h2>
           <div>
             <label class="login__forms__label" for="name">Nome Completo</label>
@@ -101,17 +101,25 @@
 </template>
 
 <script>
-// import { useStore } from 'vuex';
+import { useStore } from 'vuex'
 import { ref } from 'vue'
 
 export default {
   setup() {
     const loginForm = ref({})
     const registerForm = ref({})
-    // const store = useStore()
+    const store = useStore()
+
+    const login = ()=>{
+      store.dispatch('login', loginForm.value)
+    }
+
+    const register = ()=>{
+      store.dispatch('register', registerForm.value)
+    }
 
     return {
-      loginForm, registerForm
+      loginForm, registerForm, login, register
     }
   }
 }
@@ -134,34 +142,36 @@ export default {
       &__login{
         width: 100%;
         &__form{
-          display: flex;
-          flex-direction: column;
-          width: 80%;
-          margin: auto;
-          
-          &__1-input{
-            &:first-child{
+          &__form{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: auto;
+            
+            &__1-input{
+              &:first-child{
+                input{
+                  margin-top: -4px;
+                }
+              }
+              &:last-child{
+                input{
+                  margin-top: -3px;
+                }
+              }
               input{
-                margin-top: -4px;
+                margin-bottom: 10px;
+                padding: 5px;
+                border: none;
+                width: 80%;
+                float: right;
               }
             }
-            &:last-child{
-              input{
-                margin-top: -3px;
-              }
-            }
-            input{
-              margin-bottom: 10px;
-              padding: 5px;
-              border: none;
-              width: 80%;
-              float: right;
-            }
+  
           }
-
-        }
-        h2{
-          margin-bottom: 20px;
+          h2{
+            margin-bottom: 20px;
+          }
         }
       }
 
@@ -228,7 +238,9 @@ export default {
 
       &__login{
         &__form{
-          width: 100%;
+          &__form{
+            width: 100%;
+          }
         }
       }
 
@@ -254,7 +266,9 @@ export default {
 
       &__login{
         &__form{
-          width: 100%;
+          &__form{
+            width: 100%;
+          }
         }
       }
 

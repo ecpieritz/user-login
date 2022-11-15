@@ -5,12 +5,18 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/list',
     name: 'list',
-    component: () => import('../views/ListView.vue')
+    component: () => import('../views/ListView.vue'),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/login',
