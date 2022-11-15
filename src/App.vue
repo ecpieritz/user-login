@@ -1,9 +1,5 @@
 <template>
   <Header />
-  <nav>
-    <router-link to="/">Início</router-link> |
-    <router-link to="/list">Listagem</router-link>
-  </nav>
   <router-view/>
 </template>
 
@@ -41,7 +37,7 @@ body{
       color: $dark-primary-color;
       text-decoration: none;
       &:hover,
-      &:focus{
+      &.active{
         color: $light-primary-color;
       }
     }
