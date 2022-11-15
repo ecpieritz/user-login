@@ -187,6 +187,7 @@ export default {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
+              gap: 5px;
   
               input{
                 width: 100%;
@@ -217,6 +218,33 @@ export default {
   }
   
   
+  @media(min-width: 681px) and (max-width: 996px){
+   .login{
+    padding: 20px;
+
+    &__forms{
+      flex-direction: row;
+      gap: 20px;
+
+      &__login{
+        &__form{
+          width: 100%;
+        }
+      }
+
+      &__register{
+        &__form{
+          &__address{
+            &__3-inputs{
+              gap: 5px;
+            }
+          }
+        }
+      }
+    }
+   }       
+  }
+
   @media(max-width: 680px){
    .login{
     padding: 20px;
