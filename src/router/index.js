@@ -12,9 +12,9 @@ const routes = [
     }
   },
   {
-    path: '/list',
-    name: 'list',
-    component: () => import('../views/ListView.vue'),
+    path: '/profile',
+    name: 'profile',
+    component: () => import('../views/ProfileView.vue'),
     meta: {
       requiresAuth: true
     }

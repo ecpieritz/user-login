@@ -2,10 +2,10 @@
   <Header />
   <nav v-if="$store.state.user">
     <router-link to="/">Início</router-link> |
-    <router-link class="active" to="/list">Listagem</router-link> | 
+    <router-link to="/profile">Perfil</router-link> |
     <button @click="$store.dispatch('logout')">Sair</button>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
@@ -17,13 +17,13 @@ export default {
   components: {
     Header
   },
-  setup(){
+  setup() {
     const store = useStore()
 
-    onBeforeMount(()=>{
+    onBeforeMount(() => {
       store.dispatch('fetchUser')
     })
-    
+
     // return{
     //   user: store.state.user
     // }
@@ -35,35 +35,41 @@ export default {
 <style lang="scss">
 @import './scss/variables';
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   background-color: $bg-color;
   color: $text-color;
 }
+
 #app {
   font-family: Montserrat;
   text-align: center;
-  h1{
+
+  h1 {
     color: $primary-color;
   }
-  nav{
+
+  nav {
     text-align: end;
     margin-bottom: 30px;
     margin-right: 40px;
-    a{
+
+    a {
       color: $dark-primary-color;
       text-decoration: none;
+
       &:hover,
-      &.active{
+      &:focus {
         color: $light-primary-color;
       }
     }
-    
-    button{
+
+    button {
       border: none;
       border-radius: 4px;
       padding: 2px 10px;
@@ -72,7 +78,7 @@ body{
       color: $bg-color;
       background-color: $dark-primary-color;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
         background-color: $primary-color;
       }
