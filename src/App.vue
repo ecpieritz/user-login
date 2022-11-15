@@ -5,6 +5,7 @@
     <router-link to="/profile">Perfil</router-link> |
     <button @click="$store.dispatch('logout')">Sair</button>
   </nav>
+
   <router-view />
 </template>
 
@@ -23,10 +24,6 @@ export default {
     onBeforeMount(() => {
       store.dispatch('fetchUser')
     })
-
-    // return{
-    //   user: store.state.user
-    // }
   }
 }
 
