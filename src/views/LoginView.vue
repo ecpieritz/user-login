@@ -18,8 +18,8 @@
             </div>
           </div>
           
+          <input class="login__forms__button" type="submit" value="Login">
         </form>
-        <input class="login__forms__button" type="submit" value="Login">
 
       </div>
 
@@ -91,9 +91,9 @@
             <input type="password" id="register-password" name="register-password" autocomplete="register-password" required enterkeyhint="next"
               v-model="registerForm.password" />
           </div>
+          <input class="login__forms__button register" type="submit" value="Registrar">
         </form>
         
-        <input class="login__forms__button" type="submit" value="Registrar">
       </div>
 
     </section>
@@ -188,6 +188,13 @@ export default {
             margin-bottom: 10px;
             width: 100%;
             padding: 5px;border: none;
+
+          }
+          .login__forms__button{
+            &.register{
+              width: fit-content !important;
+              margin: 30px auto;
+            }
           }
   
           &__address{
@@ -218,7 +225,7 @@ export default {
         text-align: center !important;
         padding: 10px 20px !important;
         margin-top: 20px;
-        
+
         &:hover{
           background-color: $light-primary-color;
           cursor: pointer;
