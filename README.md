@@ -2,9 +2,7 @@
 
 ## 🖥 Preview
 <p align = "center">
-  <img src = "x" width = "700" height = "auto">
-  <img src = "x" width = "350" height = "auto">
-  <img src = "x" width = "350" height = "auto">
+  <img src = "https://github.com/ecpieritz/user-login/blob/main/public/print-01.jpg?raw=true" width = "700" height = "auto">
 </p>
 
 ## 📖 About
